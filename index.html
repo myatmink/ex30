@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mouse Event Example</title>
+
+<style>
+  body {
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .box {
+    border: 1px solid #ccc;
+    padding: 30px;
+    text-align: center;
+    width: 200px;
+  }
+
+  #text {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <div id="text">Hello</div>
+  <button id="btn">Button</button>
+</div>
+
+<script>
+  const text = document.getElementById("text");
+  const btn = document.getElementById("btn");
+
+  // Mouse over → change color
+  btn.addEventListener("mouseover", function() {
+    text.style.color = "blue";
+  });
+
+  // Mouse out → back to black (optional but nice)
+  btn.addEventListener("mouseout", function() {
+    text.style.color = "black";
+  });
+
+  // Click → change text + color
+  btn.addEventListener("click", function() {
+    text.innerHTML = "Mouse Click";
+    text.style.color = "blue";
+  });
+</script>
+
+</body>
+</html>
